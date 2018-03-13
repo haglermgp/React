@@ -19,14 +19,13 @@ let AddTodo = ({ dispatch }) => {
 				}}>
 					<input
 						ref={node => {
-							inpurt = node
+							input = node
 						}}
-					>
-						<button type='submit' >
-							Add Todo
-						</button>
-					</input>
-				</form>
+					/>
+					<button type='submit' >
+						Add Todo
+					</button>
+			</form>
 		</div>
 	)
 }
