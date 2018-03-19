@@ -1,4 +1,31 @@
 {
-	"presets": ["env", "react", "es2015", "es2016"],
-	"plugins": ["transform-object-rest-spread"]
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 Chrome versions"
+          ]
+        }
+      }
+    ],
+    "react",
+    "react-boilerplate"
+  ],
+  "plugins": [
+    [
+      "module-resolver", {
+        "root": ["./src"],
+        "alias": {
+          "utils": "./src/utils",
+          "components": "./src/components",
+          "containers": "./src/containers",
+          "routes": "./src/routes",
+          "store": "./src/store"
+        }
+      }
+    ],
+    "emotion"
+  ]
 }
