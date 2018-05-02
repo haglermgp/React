@@ -1,35 +1,27 @@
-import React from 'react'
+import React from 'react';
 import { connect } from 'react-redux'
-import { addTodo } from '../actions'
+
+// action creators
+import { addTodo } from '../actions/actionsCreator'
 
 let AddTodo = ({ dispatch }) => {
-	let input
+  let input
 
-	return (
-		<div>
-			<form
-				onSubmit={e => {
-					e.preventDefault()
-					if (!input.value.trim()) {
-						return
-					}
-
-					dispatch(addTodo(input.value))
-					input.value = ''
-				}}>
-					<input
-						ref={node => {
-							input = node
-						}}
-					/>
-					<button type='submit' >
-						Add Todo
-					</button>
-			</form>
-		</div>
-	)
+  return(
+    <div>
+      <input type="text" ref={node => {
+        input = node
+      }} />
+      <button onClick={() => {
+        dispatch(addTodo(input.value))
+        input.value = ''
+      }} >
+        add Todo 
+      </button>
+    </div>
+  )
 }
 
 AddTodo = connect()(AddTodo)
 
-export default AddTodo
+export default AddTodo;
